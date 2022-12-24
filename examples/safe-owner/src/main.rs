@@ -1,6 +1,6 @@
-use cli::{parse, Params};
+use cli::deploy_project;
 
 fn main() {
-    let params = parse();
-    println!("{:#?}", params);
+    let project_name = env!("CARGO_PKG_NAME");
+    deploy_project(project_name);
 }
