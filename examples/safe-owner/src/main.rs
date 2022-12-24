@@ -1,5 +1,6 @@
-use cli::parse;
+use cli::{parse, Params};
 
 fn main() {
-    parse();
+    let params = parse();
+    println!("{:#?}", params);
 }
