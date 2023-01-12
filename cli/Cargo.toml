@@ -8,3 +8,5 @@ crate-type = ["lib", "cdylib"]
 
 [dependencies]
 clap = { version = "4", features = ["derive"] }
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+dotenv = "0.15.0"

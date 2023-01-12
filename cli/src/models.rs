@@ -6,10 +6,10 @@ use clap::Parser;
 pub struct Params {
     /// Graph name
     #[arg(long)]
-    pub graph_slug: String,
+    pub graph_slug: Option<String>,
     /// Your Graph Studio token  (alternatively you can supply this value as an env var GRAPH_STUDIO_TOKEN)
     #[arg(long)]
-    pub graph_studio_token: String,
+    pub graph_studio_token: Option<String>,
     /// Release build
     #[clap(long, short, action)]
     pub release: bool,
