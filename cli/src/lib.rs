@@ -1,4 +1,5 @@
 extern crate dotenv;
+extern crate reqwest;
 
 use clap::Parser;
 use commands::process_params;
