@@ -5,13 +5,13 @@ use std::collections::HashMap;
 use crate::models::Params;
 use std::env;
 
-pub fn process_params(params: &Params) -> Result<(), Box<dyn std::error::Error>> { 
-    let graph_slug = params.graph_slug.to_owned().unwrap_or_else(|| {
+pub fn param_validation(params: &Params) -> Result<(), Box<dyn std::error::Error>> { 
+    let _graph_slug = params.graph_slug.to_owned().unwrap_or_else(|| {
         env::var("GRAPH_SLUG")
             .expect("You can pass the option --graph-slug or set the env variable GRAPH_SLUG")
     });
     
-    let graph_studio_token = params.graph_studio_token.to_owned().unwrap_or_else(|| {
+    let _graph_studio_token = params.graph_studio_token.to_owned().unwrap_or_else(|| {
         env::var("GRAPH_STUDIO_TOKEN")
             .expect("You can pass the option --graph-studio-token or set the env variable GRAPH_STUDIO_TOKEN")
     });

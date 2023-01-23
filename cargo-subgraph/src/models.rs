@@ -4,6 +4,9 @@ use clap::Parser;
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 pub struct Params {
+    /// Example name
+    #[arg(long, short)]
+    pub example_name: String,
     /// Graph name
     #[arg(long)]
     pub graph_slug: Option<String>,
