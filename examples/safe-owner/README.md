@@ -1,3 +1,5 @@
 ## Run
 
-From within the example folder call `cargo run -- -h` and pass on the values as necessary
+- Go to the `cargo-subgraph` folder
+- build and run `cargo install --path .`
+- This will allow for running `cargo subgraph` commands
