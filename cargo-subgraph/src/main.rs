@@ -6,17 +6,18 @@ use commands::param_validation;
 use dotenv::dotenv;
 
 mod commands;
+mod cargo;
+mod ipfs_client;
 pub mod models;
 
 fn main() {
     dotenv().ok();
 
     let params: models::Params = Parser::parse();
-    param_validation(&params).expect("Bad input parameters");
+    let graph = param_validation(&params).expect("Bad input parameters");
 
-    deploy_project(&params.example_name, &params.release)
-}
-
-pub fn deploy_project(project_name: &str, is_release: &bool) {
-    commands::cargo_compile(project_name, is_release);
+    let wasm_bin_path = cargo::compile_project_wasm(&params.example_name, &params.release)
+        .expect("Error compiling WASM binary for graph project");
+    ipfs_client::add_ipfs(&wasm_bin_path)
+        .expect("Error deploying WASM binary into IPFS");
 }

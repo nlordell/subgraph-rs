@@ -17,3 +17,8 @@ pub struct Params {
     #[clap(long, short, action)]
     pub release: bool,
 }
+
+pub struct GraphConfig {
+    pub slug: String,
+    pub studio_token: String,
+}

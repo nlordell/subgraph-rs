@@ -6,5 +6,5 @@ edition = "2021"
 [lib]
 crate-type = ["lib", "cdylib"]
 
-[dependencies]
-subgraph = { path = "../../subgraph" }
+# [dependencies]
+# subgraph = { path = "../../subgraph" }
